@@ -67,7 +67,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         String likes     = String.valueOf(d.getLikes().getCount());
         String photo_url = d.getImages().getStandard_resolution().getUrl();
-        String caption   = d.getCaption().getText();
+        String caption   = (d.getCaption() != null) ? d.getCaption().getText() : "";
 
 
         Picasso.with(context).load(photo_url).placeholder(R.drawable.photo_placeholder).into(vHolder.ivPhoto);
