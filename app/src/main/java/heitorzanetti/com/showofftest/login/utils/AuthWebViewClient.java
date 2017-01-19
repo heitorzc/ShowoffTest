@@ -1,5 +1,6 @@
 package heitorzanetti.com.showofftest.login.utils;
 
+import android.util.Log;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -31,14 +32,27 @@ public class AuthWebViewClient extends WebViewClient {
 
             URL token_url = new URL(url);
 
+            Log.w("HOST", token_url.getHost());
             if (token_url.getHost().equals("localhost")){
 
                 if (view != null) {
-                    view.onAuthTokenReceived(url.substring(url.indexOf("=") + 1));
+
+                    if (url.contains("access_token=")) {
+                        view.onAuthTokenReceived(url.substring(url.indexOf("=") + 1));
+                    }
+                    else {
+                        view.onAuthTokenError();
+                    }
+
                     view = null;
                 }
 
             }
+            else if (!url.startsWith("https://www.instagram.com/accounts/login")){
+                view.onAuthTokenError();
+            }
+
+
 
         } catch (MalformedURLException e) {
             e.printStackTrace();

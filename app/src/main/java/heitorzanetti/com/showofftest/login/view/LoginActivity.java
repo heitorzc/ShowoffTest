@@ -1,11 +1,16 @@
 package heitorzanetti.com.showofftest.login.view;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.webkit.CookieManager;
+import android.webkit.CookieSyncManager;
+import android.webkit.ValueCallback;
 import android.webkit.WebView;
+import android.widget.Toast;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -39,12 +44,34 @@ public class LoginActivity extends AppCompatActivity implements ILoginView, IPre
         presenter.checkSavedLoginData(this);
 
         setupWebView();
+    }
+
+
+    /**
+     * Setup the webView adding a custom WebViewClient into it and cleaning cookies.
+     * Cleaning all cookies is important because if the user decides do log in using
+     * a different account later on, they previous credentials won't be stored and
+     * the user won't be redirected to the HomeActivity automatically.
+     */
+    private void setupWebView(){
+
+        wvAuthenticate.setWebViewClient(new AuthWebViewClient(this));
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            CookieManager.getInstance().removeAllCookies(null);
+        }
+        else {
+            CookieManager.getInstance().removeAllCookie();
+        }
+
+        loadAuthUrl();
 
     }
 
 
-    private void setupWebView(){
-        wvAuthenticate.setWebViewClient(new AuthWebViewClient(this));
+    private void loadAuthUrl(){
+        String url = getString(R.string.instagram_auth_url);
+        wvAuthenticate.loadUrl(url);
     }
 
 
@@ -70,9 +97,9 @@ public class LoginActivity extends AppCompatActivity implements ILoginView, IPre
     public void onClickLoginButton(){
 
         if (Showoff.hasInternet) {
-            String url = getString(R.string.instagram_auth_url);
+
             wvAuthenticate.setVisibility(View.VISIBLE);
-            wvAuthenticate.loadUrl(url);
+
         }
         else {
             showConnMessage();
@@ -100,6 +127,20 @@ public class LoginActivity extends AppCompatActivity implements ILoginView, IPre
 
         startHomeActivity(token);
 
+    }
+
+
+    /**
+     * Every time the user gets an error, we have to remove all cookies so if the login
+     * fails, the user will see the Login page again when trying for a second time, instead of
+     * being automatically redirected to an Instagram error page.
+     */
+    @Override
+    public void onAuthTokenError() {
+        wvAuthenticate.setVisibility(View.GONE);
+        Toast.makeText(this, R.string.error_api_connection, Toast.LENGTH_SHORT).show();
+
+        setupWebView();
     }
 
 

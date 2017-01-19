@@ -8,6 +8,7 @@ public interface ILoginView {
     void onStoredLoginDataReceived(String token);
     void onStoredLoginDataNotFound();
     void onAuthTokenReceived(String token);
+    void onAuthTokenError();
     void onInternetOnline();
     void onInternetOffline();
 }
