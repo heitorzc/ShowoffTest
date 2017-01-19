@@ -5,8 +5,6 @@
 
     <string translatable="false" name="app_name">Showoff Test</string>
 
-    <string name="login_title">Welcome</string>
-
 
     <!--Login Screen-->
     <string name="login_description">Welcome to Showoff Tech Test!\nPlease, log in using your Instagram account to continue.</string>
@@ -14,15 +12,16 @@
 
 
     <!--Home Screen-->
-    <string name="loading"     >Loading...</string>
-    <string name="posts"       >Posts</string>
-    <string name="following"   >Following</string>
-    <string name="followers"   >Followers</string>
-    <string name="instagram"   >Instagram</string>
-    <string name="logout"      >Logout</string>
-    <string name="error_no_internet">Internet connection not available.</string>
-    <string name="error_api_connection">Error trying to get data from Instagram API.</string>
-    <string name="connection_message_error">Waiting for internet...</string>
+    <string name="loading"                  >Loading…</string>
+    <string name="posts"                    >Posts</string>
+    <string name="following"                >Following</string>
+    <string name="followers"                >Followers</string>
+    <string name="logout"                   >Logout</string>
+
+
+    <!--Messages-->
+    <string name="error_api_connection"     >Error trying to connect with Instagram.</string>
+    <string name="connection_message_error" >Waiting for internet connection…</string>
 
 
 </resources>

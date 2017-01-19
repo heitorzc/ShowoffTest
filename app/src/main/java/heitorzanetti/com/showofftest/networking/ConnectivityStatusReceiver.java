@@ -38,7 +38,8 @@ public class ConnectivityStatusReceiver extends BroadcastReceiver {
                 Log.w("GCM_PUSH", "---------------------------------------------------");
 
                 Showoff.hasInternet = true;
-                listener.onInternetOnline();
+                if (listener != null) listener.onInternetOnline();
+
             } else if (state == NetworkInfo.State.DISCONNECTED && Showoff.hasInternet) {
                 Log.w("GCM_PUSH", "---------------------------------------------------");
                 Log.i("GCM_PUSH", "---------------------------------------------------");
@@ -47,7 +48,7 @@ public class ConnectivityStatusReceiver extends BroadcastReceiver {
                 Log.w("GCM_PUSH", "---------------------------------------------------");
 
                 Showoff.hasInternet = false;
-                listener.onInternetOffline();
+                if (listener != null) listener.onInternetOffline();
             }
 
         }

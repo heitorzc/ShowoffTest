@@ -57,11 +57,11 @@ public class HomeActivity extends AppCompatActivity implements IHomeView, IPrefs
 
         token = getIntent().getStringExtra(PREFS_AUTH_TOKEN_KEY);
 
-        connMessage = Snackbar.make(getWindow().getDecorView(), "Waiting for internet...", Snackbar.LENGTH_INDEFINITE);
+        connMessage = Snackbar.make(getWindow().getDecorView(), R.string.connection_message_error, Snackbar.LENGTH_INDEFINITE);
 
         presenter = new HomePresenter(this);
-        presenter.requestUserProfileData(token);
         presenter.registerConnectivityStatusReceiver(this);
+        presenter.requestUserProfileData(token);
 
     }
 

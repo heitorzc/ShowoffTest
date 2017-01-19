@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="login_title">Bom Vindo!</string>
-
 
     <!--Login Screen-->
     <string name="login_description">Bem Vindo ao Showoff Tech Test!\nFaça login com o Instagram para continuar.</string>
@@ -10,11 +8,14 @@
 
 
     <!--Home Screen-->
-    <string name="loading"     >Carregando…</string>
-    <string name="posts"       >Posts</string>
-    <string name="following"   >Seguindo</string>
-    <string name="followers"   >Seguidores</string>
-    <string name="instagram"   >Instagram</string>
-    <string name="logout"      >Sair</string>
+    <string name="loading"                  >Carregando…</string>
+    <string name="posts"                    >Posts</string>
+    <string name="following"                >Seguindo</string>
+    <string name="followers"                >Seguidores</string>
+    <string name="logout"                   >Sair</string>
+
+    <!--Messages-->
+    <string name="error_api_connection"     >Erro ao conectar com Instagram.</string>
+    <string name="connection_message_error" >Aguardando conexão com a internet…</string>
 
 </resources>
