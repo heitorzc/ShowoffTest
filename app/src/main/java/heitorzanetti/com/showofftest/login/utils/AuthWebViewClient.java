@@ -32,7 +32,6 @@ public class AuthWebViewClient extends WebViewClient {
 
             URL token_url = new URL(url);
 
-            Log.w("HOST", token_url.getHost());
             if (token_url.getHost().equals("localhost")){
 
                 if (view != null) {
@@ -48,7 +47,8 @@ public class AuthWebViewClient extends WebViewClient {
                 }
 
             }
-            else if (!url.startsWith("https://www.instagram.com/accounts/login")){
+            else if (!webView.getTitle().contains("Authorization Request") && !webView.getTitle().contains("Log in")){
+                Log.w("HOME", webView.getTitle());
                 view.onAuthTokenError();
             }
 

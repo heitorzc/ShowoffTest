@@ -1,7 +1,7 @@
 <resources>
 
 
-    <string translatable="false" name="instagram_auth_url">https://api.instagram.com/oauth/authorize/?client_id=ffb2809d3512400d855e625fd60e2474&amp;redirect_uri=http://localhost&amp;response_type=token</string>
+    <string translatable="false" name="instagram_auth_url">https://api.instagram.com/oauth/authorize/?client_id=4751140fb1144a1391602fa1b0224c4e&amp;redirect_uri=http://localhost&amp;response_type=token</string>
 
     <string translatable="false" name="app_name">Showoff Test</string>
 
