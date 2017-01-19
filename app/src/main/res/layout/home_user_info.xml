@@ -1,0 +1,111 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="64dp"
+    android:orientation="horizontal"
+    android:background="@color/colorPrimary"
+    android:padding="@dimen/activity_horizontal_margin">
+
+    <com.github.siyamed.shapeimageview.CircularImageView
+        android:id="@+id/ivAvatar"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/insta_logo"
+        app:siBorderColor="@color/white"
+        app:siBorderWidth="3dp" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:stretchColumns="0">
+
+        <TableRow>
+
+            <heitorzanetti.com.showofftest.widgets.OpenSansTextView
+                android:id="@+id/tvFullName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="5dp"
+                android:text="@string/loading"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <heitorzanetti.com.showofftest.widgets.OpenSansTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/posts"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <heitorzanetti.com.showofftest.widgets.OpenSansTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/following"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <heitorzanetti.com.showofftest.widgets.OpenSansTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/followers"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <heitorzanetti.com.showofftest.widgets.OpenSansTextView
+                android:id="@+id/tvMedia"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="---"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <heitorzanetti.com.showofftest.widgets.OpenSansTextView
+                android:id="@+id/tvFollowing"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="---"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <heitorzanetti.com.showofftest.widgets.OpenSansTextView
+                android:id="@+id/tvFollowers"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="---"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>
+

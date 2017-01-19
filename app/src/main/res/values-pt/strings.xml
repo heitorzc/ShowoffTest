@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="login_title">Bom Vindo!</string>
+
+
+    <!--Login Screen-->
+    <string name="login_description">Bem Vindo ao Showoff Tech Test!\nFaça login com o Instagram para continuar.</string>
+    <string name="bt_login_text">FAZER LOGIN COM INSTAGRAM</string>
+
+
+    <!--Home Screen-->
+    <string name="loading"     >Carregando…</string>
+    <string name="posts"       >Posts</string>
+    <string name="following"   >Seguindo</string>
+    <string name="followers"   >Seguidores</string>
+    <string name="instagram"   >Instagram</string>
+    <string name="logout"      >Sair</string>
+
+</resources>
